@@ -16,9 +16,10 @@ export class TaskRepository extends Repository<Task> {
         const query = this.createQueryBuilder("task");
 
         if(status){
-            
+            query.andWhere("task.status = :status", {status : status});
         }
         if(search){
+            query.andWhere("task.title LIKE :search OR task.description LIKE :search", {search : `%${search}%`});
 
         }
 
