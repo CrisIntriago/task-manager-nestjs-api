@@ -36,16 +36,6 @@ export class TasksController {
 
     }
 
-    /*  
-
-   @Post()
-   @UsePipes(ValidationPipe)
-   createTask(@Body() CreateTaskDto: CreateTaskDto): Task {
-       return this.tasksService.createTask(CreateTaskDto)
-   }
-
-*/
-
     @Patch("/:id/status")
     updateTaskStatus(
         @Param("id", ParseIntPipe) id: number,
